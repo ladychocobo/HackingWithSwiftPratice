@@ -78,6 +78,7 @@
 			children = (
 				7DBEAF1F1EDD442500CD4C32 /* AppDelegate.swift */,
 				7DBEAF211EDD442500CD4C32 /* ViewController.swift */,
+				7DBEAF451EDD527A00CD4C32 /* PictureView.swift */,
 				7DBEAF231EDD442500CD4C32 /* Main.storyboard */,
 				7DBEAF261EDD442500CD4C32 /* Assets.xcassets */,
 				7DBEAF281EDD442500CD4C32 /* LaunchScreen.storyboard */,
@@ -92,7 +93,6 @@
 				7DBEAF381EDD450600CD4C32 /* nssl0049.jpg */,
 				7DBEAF391EDD450600CD4C32 /* nssl0051.jpg */,
 				7DBEAF3A1EDD450600CD4C32 /* nssl0091.jpg */,
-				7DBEAF451EDD527A00CD4C32 /* PictureView.swift */,
 			);
 			path = Project1;
 			sourceTree = "<group>";

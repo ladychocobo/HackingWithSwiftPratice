@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Picture Viewer"
+        self.title = "Main"
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!

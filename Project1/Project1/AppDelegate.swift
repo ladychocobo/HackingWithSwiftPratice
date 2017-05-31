@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.navigationController = UINavigationController()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainVC = storyboard.instantiateViewController(withIdentifier: "MainPage") as! ViewController
-        self.navigationController?.viewControllers = [mainVC]
+        // 感謝默司大大幫我指出要從本來的 self.navigationController?.viewControllers = [mainVC] 改為 下面的一行才能正確顯示出來
+        self.navigationController?.setViewControllers([mainVC], animated: false)
         self.window!.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
         

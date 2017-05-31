@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Project1"
+      name = "Project1">
+      <Group
+         location = "group:Project1"
+         name = "Project1">
+         <FileRef
+            location = "group:AppDelegate.swift">
+         </FileRef>
+         <Group
+            location = "group:Assets.xcassets"
+            name = "Assets.xcassets">
+            <Group
+               location = "group:AppIcon.appiconset"
+               name = "AppIcon.appiconset">
+               <FileRef
+                  location = "group:Contents.json">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:Base.lproj"
+            name = "Base.lproj">
+            <FileRef
+               location = "group:LaunchScreen.storyboard">
+            </FileRef>
+            <FileRef
+               location = "group:Main.storyboard">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Info.plist">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0033.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0034.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0041.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0042.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0043.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0045.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0046.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0049.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0051.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:nssl0091.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:PictureView.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ViewController.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Project1.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

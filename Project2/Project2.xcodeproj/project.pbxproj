@@ -265,6 +265,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ladychocobo.HackingWithSwift.Project2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -277,6 +278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ladychocobo.HackingWithSwift.Project2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -299,6 +301,7 @@
 				7DBEAF641EDF005F00CD4C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,7 +12,7 @@ import GameplayKit
 class ViewController: UIViewController {
     
     var buttons = [UIButton]()
-    var countries = [String]()
+    var countries = [(String, String)]()
     var score = 0
     let gap = UIScreen.main.bounds.height / 15
     var correctAnswer = 0
@@ -21,7 +21,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        //self.countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
+        self.countries += [("estonia", "愛沙尼亞"), ("france", "法國"), ("germany", "德國"), ("ireland", "愛爾蘭"), ("italy", "義大利"), ("monaco", "摩納哥"), ("nigeria", "奈及利亞"), ("poland", "波蘭"), ("russia","俄羅斯"), ("spain","西班牙"), ("uk", "英國"), ("us", "美國")]
         
         for i in 1...3 {
             let button = UIButton()
@@ -33,7 +34,8 @@ class ViewController: UIViewController {
             
             self.view.addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: gap * CGFloat(i + 2) + (gap * 2 * CGFloat(i - 1))).isActive = true
+            // 謝謝默司大大的提醒，不是對齊self.view.topAnchor而是對準navigationBar的buttomAnchor
+            button.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant: gap + (gap * CGFloat(i - 1) * 3)).isActive = true
             button.widthAnchor.constraint(equalToConstant: 200).isActive = true
             button.heightAnchor.constraint(equalToConstant: 100).isActive = true
             button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
@@ -44,22 +46,23 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(_ action: UIAlertAction? = nil) {
-        self.countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
+//        self.countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [String]
+        self.countries = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: countries) as! [(String, String)]
         for (index, button) in self.buttons.enumerated() {
-            button.setImage(UIImage(named: countries[index]), for: .normal)
+            button.setImage(UIImage(named: countries[index].0), for: .normal)
         }
         
         self.correctAnswer = GKRandomSource.sharedRandom().nextInt(upperBound: 3)
-        self.title = self.countries[correctAnswer].uppercased()
+//        self.title = self.countries[correctAnswer].uppercased()
+        self.title = self.countries[self.correctAnswer].1
     }
     
     func onButtonAction(_ sender: UIButton) {
         let titleStr: String
         titleStr = sender.tag == self.correctAnswer + 1 ? "正確" : "錯誤"
-        self.score = sender.tag == self.correctAnswer + 1 ? self.score + 1 : self.score < 0 ? 0 : self.score - 1
-        print(score)
-        
-        let alert = UIAlertController(title: titleStr, message: "分數為\(self.score > 0 ? self.score : 0)", preferredStyle: .alert)
+        self.score = sender.tag == self.correctAnswer + 1 ? self.score + 1 : self.score > 0 ? self.score - 1 : 0
+
+        let alert = UIAlertController(title: titleStr, message: "分數為\(self.score)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "繼續", style: .default, handler: askQuestion))
         self.present(alert, animated: true)
     }
